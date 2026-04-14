@@ -16,20 +16,6 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1000,
     minify: false,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'vendor.react';
-            if (id.includes('lucide-react')) return 'vendor.icons';
-            if (id.includes('sonner')) return 'vendor.sonner';
-            if (id.includes('@supabase')) return 'vendor.supabase';
-            if (id.includes('@stripe') || id.includes('@mercadopago')) return 'vendor.payments';
-            return 'vendor';
-          }
-        },
-      },
-    },
   },
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })

@@ -77,10 +77,18 @@ export function Auth() {
 
       if (error.name === 'ZodError') {
         const fieldErrors: Record<string, string> = {};
+        const pwdErrors: string[] = [];
         error.errors.forEach((err: any) => {
-          fieldErrors[err.path[0]] = err.message;
+          if (err.path[0] === 'password') {
+            pwdErrors.push(err.message);
+          } else {
+            fieldErrors[err.path[0]] = err.message;
+          }
         });
         setErrors(fieldErrors);
+        if (pwdErrors.length > 0) {
+          setPasswordErrors(pwdErrors);
+        }
       } else {
         // Handle Supabase specific errors
         let message = error.message || 'Ocorreu um erro inesperado';

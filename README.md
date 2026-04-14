@@ -75,7 +75,7 @@ npm run dev
 
 5. **Abra no navegador**
 ```
-http://localhost:5173
+https://amor-cacau.onrender.com/
 ```
 
 ## 🚀 Deploy

@@ -58,7 +58,7 @@ VITE_WHATSAPP_PHONE=5517992598131
 ### 4️⃣ TESTAR LOCALMENTE
 ```bash
 npm run dev
-# Abrir http://localhost:5173
+# Abrir https://amor-cacau.onrender.com/
 ```
 
 ### 5️⃣ BUILD PARA PRODUÇÃO
